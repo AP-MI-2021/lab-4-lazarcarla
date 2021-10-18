@@ -6,6 +6,22 @@ def citire_lista():
         l.append(int(x))
     return l
 
+def concatenare(l):
+    '''
+    detrmina numarul obtinut prin concatenarea numerelor pozitive dintr-o lista
+    :param l:lista de numere intregi
+    :return:numarul obtinut prin concatenarea numerelor pozitive
+    '''
+    rez=''
+    for x in l:
+        if x>0:
+            rez=rez+str(x)
+    return int(rez)
+
+
+
+def test_concatenare():
+    assert concatenare([0, 8, 23,-13, 25])==82325
 
 
 def suma_max_min(l):
@@ -59,7 +75,7 @@ def test_numere_sum_cif_mai_mare_sau_egala_cu_n():
 
 
 def main():
-    #test_concatenare_nr_pozitive()
+    test_concatenare()
     test_suma_max_min()
     test_numere_sum_cif_mai_mare_sau_egala_cu_n()
     l = []
@@ -74,8 +90,8 @@ def main():
         optiune = input("dati optiune:")
         if optiune == "1":
             l = citire_lista()
-        #elif optiune == "2":
-            #print(concatenare_nr_pozitive(l))
+        elif optiune == "2":
+            print(concatenare(l))
         elif optiune == "3":
 
             print(suma_max_min(l))
